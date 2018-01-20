@@ -1,2 +1,4 @@
 # python_scripts
-Web Scraping, Time series and data science scripts in Python
+Time series analysis and data science scripts in Python
+- Outlier Removal (Time Series, KDTree nearest neighbor based)
+- Merging two timseries in pandas
