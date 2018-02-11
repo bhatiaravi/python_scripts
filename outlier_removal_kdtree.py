@@ -11,6 +11,12 @@ Usage - outlier_removal_kdtree(df, ['ColA','ColB'])
 Limitation: Cannot remove outliers forming small cluster of points which is more than num num_neighbors
 """
 def outlier_removal_kdtree(df, on_cols, quantile=0.99, num_neighbors=4):
+    """
+    df: pandas Dataframe
+    on_cols: array of column names
+    quantile: Quantile of distances to accept from distance array
+    num_neighbors: No of neighbors needed to consider valid point. Should be kept low as it can slow down computation
+    """
     # Normalize variables first so that distance measurements are meaningful
     scaled_vars = pd.DataFrame(preprocessing.StandardScaler().fit_transform(df[on_cols]), columns=on_cols)
     # cKDTree significantly speeds up process compared to kdtree
